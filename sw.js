@@ -15,6 +15,19 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', () => {
     
+      // delete any caches that aren't in currencyCacheName
+  // which will get rid of surrency-static-v2
+  event.waitUntil(
+    caches.keys().then(keys => Promise.all(
+      keys.map(key => {
+        if (key != currencyCacheName) {
+          return caches.delete(key);
+        }
+      })
+    )).then(() => {
+      console.log('V3 now ready to handle fetches!');
+    })
+  );
 });
 
 self.addEventListener('fetch', (event) => {
