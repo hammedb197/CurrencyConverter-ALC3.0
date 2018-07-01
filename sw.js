@@ -4,9 +4,8 @@ self.addEventListener('install', (event) => {
             .then(cache => {
                 cache.addAll([
                     './',
-                    './Index(CC).html',
+                    './index.html',
                     './style.css',
-                    './Index(CC).js,
                     './index.js',
                     'https://free.currencyconverterapi.com/api/v5/currencies'
                 ])
