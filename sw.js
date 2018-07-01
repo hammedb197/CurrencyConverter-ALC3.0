@@ -6,7 +6,7 @@ self.addEventListener('install', (event) => {
                     './',
                     './Index(CC).html',
                     './style.css',
-                    './index.js,
+                    './Index(CC).js,
                     'https://free.currencyconverterapi.com/api/v5/currencies'
                 ])
         })
